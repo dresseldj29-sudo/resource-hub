@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resource Hub – FiveM Resource Center</title>
+<meta name="theme-color" content="#0b1020">
+<style>
+:root{--bg:#080c18;--panel:#11182a;--panel2:#151f35;--line:#263550;--text:#edf3ff;--muted:#9aabc7;--blue:#63a7ff;--cyan:#65e4df;--danger:#ff7185}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#17284b 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,Segoe UI,Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid #35527a;background:#1c3b67;color:white;border-radius:10px;padding:10px 14px;font-weight:650}button:hover{filter:brightness(1.12)}button.secondary{background:#172136;border-color:var(--line)}button.danger{background:#5a2133;border-color:#80344b}.wrap{max-width:1280px;margin:auto;padding:22px}.top{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#64a7ff,#7566ff);font-size:24px;font-weight:900;box-shadow:0 8px 30px #427fff35}.brand h1{font-size:21px;margin:0;letter-spacing:.3px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.status{color:var(--cyan);font-size:12px}.hero{padding:30px 0 22px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:2px;font-weight:800}.hero h2{font-size:clamp(28px,4vw,43px);line-height:1.1;margin:8px 0}.hero p{color:var(--muted);max-width:680px;margin:0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:12px 0 22px}.stat,.panel,.resource,.group{background:linear-gradient(145deg,#131d32,#0f1627);border:1px solid var(--line);border-radius:16px;padding:17px;min-width:0}.stat span{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:25px;margin-top:4px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px}.side{align-self:start;position:sticky;top:12px}.side button{width:100%;text-align:left;margin:4px 0;background:transparent;border-color:transparent;color:#b7c7e1}.side button.active,.side button:hover{background:#1a2a46;border-color:#2e4568;color:white}.content{min-width:0}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.sectionhead h3{margin:0;font-size:20px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.resource h4,.group h4{margin:10px 0 4px;font-size:17px;overflow-wrap:anywhere}.resource p,.group p{color:var(--muted);font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.tag{display:inline-block;font-size:11px;border:1px solid #2e4c70;background:#152946;color:#a9d2ff;border-radius:7px;padding:3px 8px;margin:2px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.field{display:grid;gap:6px;margin:10px 0}.field label{color:#bdcbe1;font-size:12px;font-weight:700}.field input,.field textarea,.field select{width:100%;background:#0a1120;color:white;border:1px solid #2a3a57;border-radius:9px;padding:11px;outline:none}.field textarea{min-height:86px;resize:vertical}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.notice{border:1px solid #5d4a2c;background:#2c2416;color:#f6d7a0;padding:12px;border-radius:10px;font-size:13px;margin:14px 0}.success{color:#80e7c0}.hidden{display:none!important}.empty{padding:28px;text-align:center;border:1px dashed #334461;border-radius:14px;color:var(--muted)}.player{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:min(720px,calc(100% - 24px));z-index:5;background:#111a2bed;backdrop-filter:blur(18px);border:1px solid #354968;border-radius:16px;padding:10px 14px;box-shadow:0 12px 50px #0008;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.track{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.controls{display:flex;gap:6px;align-items:center}.controls button{padding:7px 10px}.controls input{width:82px;accent-color:var(--blue)}footer{text-align:center;color:#647797;font-size:11px;padding:28px 0 90px}.filehint{font-size:12px;color:var(--muted)}.progress{height:7px;border-radius:99px;background:#26344c;overflow:hidden;margin-top:8px}.progress div{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0%}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.side{position:static;display:flex;gap:5px;overflow:auto}.side button{white-space:nowrap;width:auto}.grid,.formgrid{grid-template-columns:1fr}.wrap{padding:14px}.player{grid-template-columns:1fr}.controls{justify-content:space-between}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">RH</div><div><h1>Resource Hub</h1><p>FiveM resources · Teams · Downloads</p></div></div>
+ <div><div class="status" id="connection">● Lokaler Vorschaumodus</div><div class="muted" id="userLabel" style="font-size:12px">Nicht angemeldet</div></div>
+</header>
+<section class="hero"><div><div class="eyebrow">DEIN RESOURCE CENTER</div><h2>Alles für deinen<br>FiveM-Server.</h2><p>Resources organisieren, Installationshinweise dokumentieren, Teams verwalten und Dateien mit deiner Community teilen.</p></div><button id="quickUpload">＋ Resource hochladen</button></section>
+<section class="stats">
+ <div class="stat"><span>Resources</span><strong id="statResources">0</strong></div>
+ <div class="stat"><span>Gruppen</span><strong id="statGroups">0</strong></div>
+ <div class="stat"><span>Mitglieder (lokal erfasst)</span><strong id="statMembers">0</strong></div>
+ <div class="stat"><span>Gespeicherte Uploads</span><strong id="statStorage">0 MB</strong></div>
+</section>
+<div class="layout">
+<nav class="side">
+ <button class="active" data-view="home">⌂ Übersicht</button>
+ <button data-view="resources">▣ Resources</button>
+ <button data-view="groups">♧ Gruppen</button>
+ <button data-view="upload">＋ Upload</button>
+ <button data-view="servers">⌘ FiveM-Server</button>
+ <button data-view="owner">⚙ Besitzerpanel</button>
+ <button data-view="account">⇥ Anmeldung</button>
+</nav>
+<main class="content">
+<section id="view-home">
+ <div class="sectionhead"><h3>Willkommen im Resource Hub</h3><span class="tag">Firebase-ready</span></div>
+ <div class="grid">
+  <article class="panel"><h4>📦 Resource-Bibliothek</h4><p class="muted">ZIP-Dateien mit Funktionen, Framework, Installationsschritten und Versionsangaben beschreiben.</p><button data-goto="resources">Bibliothek öffnen</button></article>
+  <article class="panel"><h4>👥 Private Gruppen</h4><p class="muted">Gruppen mit Beitrittscode erstellen und Resources gezielt teilen.</p><button data-goto="groups">Gruppen verwalten</button></article>
+  <article class="panel"><h4>🔗 Server verknüpfen</h4><p class="muted">Servername, Verbindungsadresse und Discord-Community zentral hinterlegen.</p><button data-goto="servers">Server eintragen</button></article>
+  <article class="panel"><h4>🎵 Hintergrundmusik</h4><p class="muted">Deine lokalen MP3-Dateien mit Lautstärke, Pause und Titelwechsel.</p><span class="tag">Unten im Player</span></article>
+ </div>
+ <div class="notice">Hinweis: Im Vorschaumodus bleiben Daten nur in diesem Browser gespeichert. Für gemeinsame Gruppen, sichere Anmeldung und dauerhafte Datei-Uploads müssen Firebase-Konfiguration und Sicherheitsregeln eingerichtet werden.</div>
+</section>
+<section id="view-resources" class="hidden">
+ <div class="sectionhead"><h3>Resource-Bibliothek</h3><button data-goto="upload">＋ Neue Resource</button></div><div id="resourceList" class="grid"></div>
+</section>
+<section id="view-upload" class="hidden">
+ <div class="sectionhead"><h3>Resource veröffentlichen</h3><span class="tag">ZIP / Beschreibung</span></div>
+ <div class="panel"><form id="resourceForm">
+ <div class="formgrid"><div class="field"><label>Resource-Name *</label><input name="name" required maxlength="90" placeholder="z. B. RH-Respawn"></div><div class="field"><label>Framework</label><select name="framework"><option>Standalone</option><option>ESX</option><option>QBCore</option><option>Qbox</option><option>ESX / QBCore</option></select></div></div>
+ <div class="field"><label>Was kann die Resource? *</label><textarea name="description" required maxlength="2500" placeholder="Funktionen, Menüs, Befehle, Berechtigungen …"></textarea></div>
+ <div class="field"><label>Installation / Wie funktioniert sie?</label><textarea name="instructions" maxlength="4000" placeholder="1. ZIP entpacken …&#10;2. Ordner in resources kopieren …&#10;3. ensure resource_name in server.cfg"></textarea></div>
+ <div class="formgrid"><div class="field"><label>Version</label><input name="version" placeholder="1.0.0"></div><div class="field"><label>Gruppe (optional)</label><select id="resourceGroup" name="groupId"><option value="">Nicht zugeordnet</option></select></div></div>
+ <div class="field"><label>ZIP-Datei *</label><input name="file" type="file" accept=".zip,application/zip,application/x-zip-compressed" required><div class="filehint">Für den Vorschaumodus max. 20 MB. Mit Firebase Storage kannst du das Limit in den Regeln anpassen.</div></div>
+ <button type="submit">Resource speichern</button><span id="uploadStatus" class="muted" style="margin-left:10px"></span>
+ </form></div>
+</section>
+<section id="view-groups" class="hidden">
+ <div class="sectionhead"><h3>Gruppen</h3><span class="tag">Beitrittscodes</span></div>
+ <div class="panel"><h4>Gruppe erstellen</h4><form id="groupForm"><div class="formgrid"><div class="field"><label>Gruppenname *</label><input name="name" required maxlength="70" placeholder="z. B. NovaRP Entwickler"></div><div class="field"><label>Gruppenpasswort (optional)</label><input name="password" type="password" minlength="6" placeholder="Mindestens 6 Zeichen"></div></div><div class="field"><label>Beschreibung</label><textarea name="description" placeholder="Wer gehört zur Gruppe?"></textarea></div><button>Gruppe erstellen</button></form><div id="newCode" class="success"></div></div>
+ <div class="panel" style="margin-top:12px"><h4>Gruppe beitreten</h4><form id="joinForm"><div class="formgrid"><div class="field"><label>Beitrittscode</label><input name="code" required placeholder="z. B. 8K4Q2P"></div><div class="field"><label>Gruppenpasswort, falls nötig</label><input name="password" type="password"></div></div><button class="secondary">Gruppe beitreten</button></form></div>
+ <div id="groupList" class="grid" style="margin-top:14px"></div>
+</section>
+<section id="view-servers" class="hidden">
+ <div class="sectionhead"><h3>FiveM-Server & Discord</h3></div>
+ <div class="panel"><form id="serverForm"><div class="formgrid"><div class="field"><label>Servername *</label><input name="name" required placeholder="NovaRP"></div><div class="field"><label>Serveradresse / Connect-IP</label><input name="address" placeholder="example.de:30120"></div></div><div class="field"><label>Discord-Serverlink</label><input name="discord" placeholder="https://discord.gg/DEINCODE"></div><div class="field"><label>Notizen</label><textarea name="notes" placeholder="Framework, Status, Hinweise …"></textarea></div><button>Server speichern</button></form></div><div id="serverList" class="grid" style="margin-top:14px"></div>
+</section>
+<section id="view-owner" class="hidden">
+ <div class="sectionhead"><h3>Besitzerpanel</h3><span class="tag">Nur Owner</span></div>
+ <div id="ownerLocked" class="panel"><p class="muted">Melde dich mit dem Besitzerkonto an, das du in Firebase Authentication eingerichtet hast.</p><button data-goto="account">Zur Anmeldung</button></div>
+ <div id="ownerContent" class="hidden">
+  <div class="stats"><div class="stat"><span>Gesamtgröße lokaler Uploads</span><strong id="ownerStorage">0 MB</strong></div><div class="stat"><span>Resource-Dateien</span><strong id="ownerFiles">0</strong></div><div class="stat"><span>Gruppen</span><strong id="ownerGroups">0</strong></div><div class="stat"><span>Erfasste Mitglieder</span><strong id="ownerMembers">0</strong></div></div>
+  <div class="panel"><h4>Website-Einstellungen</h4><form id="settingsForm"><div class="field"><label>Willkommensnachricht</label><input name="welcome" maxlength="160" placeholder="Alles für deinen FiveM-Server."></div><div class="field"><label>Discord-Link</label><input name="discord" placeholder="https://discord.gg/..."></div><button>Einstellungen speichern</button></form><p class="muted">Nutzerzahlen zeigen nur Aktivitäten, die die Webseite tatsächlich erfasst. Das ist keine FiveM-Server-API-Abfrage.</p></div>
+ </div>
+</section>
+<section id="view-account" class="hidden">
+ <div class="sectionhead"><h3>Anmeldung</h3></div>
+ <div class="panel"><p class="muted">Für die sichere Cloud-Anmeldung Firebase Authentication (E-Mail/Passwort) verwenden. Der Benutzername BBHG1036 kann als Anzeigename geführt werden; das Passwort wird nicht im HTML gespeichert.</p>
+ <form id="loginForm"><div class="field"><label>E-Mail des Firebase-Kontos</label><input name="email" type="email" required autocomplete="username" placeholder="Dein Firebase-Login"></div><div class="field"><label>Passwort</label><input name="password" type="password" required autocomplete="current-password"></div><button>Anmelden</button><button type="button" id="logout" class="secondary">Abmelden</button></form><p id="authStatus" class="muted"></p></div>
+</section>
+</main></div>
+<footer>RESOURCE HUB · Community Resource Library · Keine Verbindung zur FiveM-API im Standardmodus</footer>
+</div>
+<div class="player">
+ <div><div class="track" id="trackName">Resource Hub Radio · Musik starten</div><div class="progress"><div id="trackProgress"></div></div></div>
+ <div class="controls"><button id="prev" title="Vorheriger Titel">◀|</button><button id="play" title="Play/Pause">▶</button><button id="next" title="Nächster Titel">|▶</button><label class="muted" for="volume">Vol.</label><input id="volume" type="range" min="0" max="1" step=".01" value=".22" aria-label="Lautstärke"></div>
+ <audio id="audio" preload="metadata"></audio>
+</div>
+<script type="module">
+/* Firebase aktivieren: Werte in firebaseConfig ersetzen. Niemals Admin-SDK-Schlüssel in eine Webseite kopieren. */
+const firebaseConfig = {
+  apiKey: "DEIN_FIREBASE_API_KEY",
+  authDomain: "DEIN_PROJEKT.firebaseapp.com",
+  projectId: "DEIN_PROJEKT",
+  storageBucket: "DEIN_PROJEKT.firebasestorage.app",
+  messagingSenderId: "DEINE_SENDER_ID",
+  appId: "DEINE_APP_ID"
+};
+const FIREBASE_ENABLED = !firebaseConfig.apiKey.startsWith("DEIN_");
+let db=null, auth=null, storage=null, cloudUser=null;
+if(FIREBASE_ENABLED){
+ try{
+  const {initializeApp}=await import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js");
+  const {getFirestore,collection,addDoc,getDocs,doc,deleteDoc,setDoc,getDoc,query,where,serverTimestamp}=await import("https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js");
+  const {getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut}=await import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js");
+  const {getStorage,ref,uploadBytes, getDownloadURL,deleteObject}=await import("https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js");
+  const app=initializeApp(firebaseConfig); db=getFirestore(app);auth=getAuth(app);storage=getStorage(app);
+  window.RH={collection,addDoc,getDocs,doc,deleteDoc,setDoc,getDoc,query,where,serverTimestamp,ref,uploadBytes,getDownloadURL,deleteObject,signInWithEmailAndPassword,signOut,onAuthStateChanged};
+  document.getElementById("connection").textContent="● Firebase konfiguriert";
+  document.getElementById("connection").style.color="#65e4df";
+ }catch(e){console.error(e);document.getElementById("connection").textContent="● Firebase-Verbindung fehlgeschlagen"}
+}
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let resources=JSON.parse(localStorage.getItem("rh_resources")||"[]");
+let groups=JSON.parse(localStorage.getItem("rh_groups")||"[]");
+let servers=JSON.parse(localStorage.getItem("rh_servers")||"[]");
+let joined=JSON.parse(localStorage.getItem("rh_joined")||"[]");
+let owner=false;
+const mb=n=>(n/1024/1024).toFixed(2)+" MB";
+function persist(){localStorage.setItem("rh_resources",JSON.stringify(resources));localStorage.setItem("rh_groups",JSON.stringify(groups));localStorage.setItem("rh_servers",JSON.stringify(servers));localStorage.setItem("rh_joined",JSON.stringify(joined));render()}
+function esc(s=""){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function goto(view){$$("[id^=view-]").forEach(el=>el.classList.toggle("hidden",el.id!=="view-"+view));$$("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(view==="upload")updateGroupSelect();window.scrollTo({top:0,behavior:"smooth"})}
+$$("[data-view]").forEach(b=>b.onclick=()=>goto(b.dataset.view));$$("[data-goto]").forEach(b=>b.onclick=()=>goto(b.dataset.goto));$("#quickUpload").onclick=()=>goto("upload");
+function code(){const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";return Array.from({length:6},()=>chars[Math.floor(Math.random()*chars.length)]).join("")}
+function render(){
+ $("#statResources").textContent=resources.length;$("#statGroups").textContent=groups.length;$("#statMembers").textContent=joined.length;
+ const total=resources.reduce((n,r)=>n+(r.size||0),0);$("#statStorage").textContent=mb(total);
+ $("#ownerStorage").textContent=mb(total);$("#ownerFiles").textContent=resources.length;$("#ownerGroups").textContent=groups.length;$("#ownerMembers").textContent=joined.length;
+ $("#ownerLocked").classList.toggle("hidden",owner);$("#ownerContent").classList.toggle("hidden",!owner);
+ $("#resourceList").innerHTML=resources.length?resources.map(r=>`<article class="resource"><span class="tag">${esc(r.framework||"Standalone")}</span><span class="tag">v${esc(r.version||"1.0.0")}</span><h4>${esc(r.name)}</h4><p>${esc(r.description)}</p><p><b>Installation:</b><br>${esc(r.instructions||"Keine Anleitung eingetragen.")}</p><p class="filehint">${esc(r.fileName||"Datei")} · ${mb(r.size||0)}</p><div class="actions">${r.dataUrl?`<a download="${esc(r.fileName)}" href="${r.dataUrl}"><button>Herunterladen</button></a>`:r.downloadURL?`<a href="${esc(r.downloadURL)}" target="_blank" rel="noopener"><button>Herunterladen</button></a>`:""}${owner?`<button class="danger" data-delete-resource="${esc(r.id)}">Löschen</button>`:""}</div></article>`).join(""):'<div class="empty">Noch keine Resources. Lade deine erste ZIP-Datei hoch.</div>';
+ $("#groupList").innerHTML=groups.length?groups.map(g=>`<article class="group"><span class="tag">Gruppe</span><h4>${esc(g.name)}</h4><p>${esc(g.description||"Keine Beschreibung.")}</p><p>Beitrittscode: <b>${esc(g.code)}</b></p><p>Mitglieder: ${g.members||1}</p><div class="actions"><button class="secondary" data-copy="${esc(g.code)}">Code kopieren</button>${owner?`<button class="danger" data-delete-group="${esc(g.id)}">Löschen</button>`:""}</div></article>`).join(""):'<div class="empty">Noch keine Gruppen erstellt.</div>';
+ $("#serverList").innerHTML=servers.length?servers.map(s=>`<article class="resource"><h4>${esc(s.name)}</h4><p>Server: ${esc(s.address||"Nicht eingetragen")}</p><p>${esc(s.notes||"")}</p><div class="actions">${s.address?`<button class="secondary" data-copy="${esc(s.address)}">Adresse kopieren</button>`:""}${s.discord?`<a href="${esc(s.discord)}" target="_blank" rel="noopener"><button>Discord öffnen</button></a>`:""}${owner?`<button class="danger" data-delete-server="${esc(s.id)}">Löschen</button>`:""}</div></article>`).join(""):'<div class="empty">Noch keine Server verknüpft.</div>';
+ updateGroupSelect();
+ $$("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent="Kopiert ✓"}catch{prompt("Bitte kopieren:",b.dataset.copy)}});
+ $$("[data-delete-resource]").forEach(b=>b.onclick=()=>{if(confirm("Resource löschen?")){resources=resources.filter(x=>x.id!==b.dataset.deleteResource);persist()}});
+ $$("[data-delete-group]").forEach(b=>b.onclick=()=>{if(confirm("Gruppe löschen?")){groups=groups.filter(x=>x.id!==b.dataset.deleteGroup);persist()}});
+ $$("[data-delete-server]").forEach(b=>b.onclick=()=>{if(confirm("Server löschen?")){servers=servers.filter(x=>x.id!==b.dataset.deleteServer);persist()}});
+}
+function updateGroupSelect(){const sel=$("#resourceGroup");if(!sel)return;const val=sel.value;sel.innerHTML='<option value="">Nicht zugeordnet</option>'+groups.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join("");sel.value=val}
+$("#resourceForm").onsubmit=async e=>{e.preventDefault();const f=e.currentTarget,fd=new FormData(f),file=fd.get("file");if(!file||!file.name.toLowerCase().endsWith(".zip")){alert("Bitte eine ZIP-Datei auswählen.");return}if(file.size>20*1024*1024){alert("Im lokalen Vorschaumodus sind maximal 20 MB möglich.");return}
+ const status=$("#uploadStatus");status.textContent="Wird gespeichert …";
+ try{
+  let record={id:crypto.randomUUID(),name:fd.get("name").trim(),framework:fd.get("framework"),description:fd.get("description").trim(),instructions:fd.get("instructions").trim(),version:fd.get("version")||"1.0.0",groupId:fd.get("groupId"),fileName:file.name,size:file.size,createdAt:new Date().toISOString()};
+  if(db&&storage&&cloudUser){const path=`resources/${cloudUser.uid}/${record.id}/${file.name.replace(/[^\w.\-]/g,"_")}`;const fileRef=window.RH.ref(storage,path);await window.RH.uploadBytes(fileRef,file);record.storagePath=path;record.downloadURL=await window.RH.getDownloadURL(fileRef);const ref=await window.RH.addDoc(window.RH.collection(db,"resources"),{...record,ownerUid:cloudUser.uid,createdAt:window.RH.serverTimestamp()});record.id=ref.id;}
+  else {if(file.size>4*1024*1024)throw new Error("Ohne Firebase können lokale ZIP-Dateien nur bis 4 MB als Browser-Vorschau gespeichert werden. Firebase einrichten, um größere Dateien dauerhaft hochzuladen.");record.dataUrl=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});}
+  resources.unshift(record);persist();f.reset();status.textContent="Gespeichert ✓";goto("resources");
+ }catch(err){console.error(err);status.textContent="Fehler: "+err.message;alert("Upload nicht abgeschlossen: "+err.message)}
+};
+$("#groupForm").onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.currentTarget);const name=fd.get("name").trim();const password=fd.get("password");if(password&&password.length<6){alert("Gruppenpasswort muss mindestens 6 Zeichen haben.");return}
+ const g={id:crypto.randomUUID(),name,description:fd.get("description").trim(),code:code(),passwordHash:password?await digest(password):"",members:1,createdAt:new Date().toISOString()};
+ // Demo: local only. For production, validate group membership server-side / with secure Firebase rules.
+ groups.unshift(g);joined.push({groupId:g.id,joinedAt:new Date().toISOString()});persist();$("#newCode").textContent="Gruppe erstellt! Beitrittscode: "+g.code;e.currentTarget.reset();
+};
+async function digest(s){const bytes=new TextEncoder().encode(s);const hash=await crypto.subtle.digest("SHA-256",bytes);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,"0")).join("")}
+$("#joinForm").onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.currentTarget),g=groups.find(x=>x.code.toUpperCase()===fd.get("code").trim().toUpperCase());if(!g){alert("Beitrittscode nicht gefunden.");return}if(g.passwordHash&&g.passwordHash!==await digest(fd.get("password"))){alert("Gruppenpasswort ist falsch.");return}if(!joined.some(x=>x.groupId===g.id)){joined.push({groupId:g.id,joinedAt:new Date().toISOString()});g.members=(g.members||1)+1;persist()}alert("Du bist der Gruppe "+g.name+" beigetreten.");e.currentTarget.reset()};
+$("#serverForm").onsubmit=e=>{e.preventDefault();const fd=new FormData(e.currentTarget);const discord=fd.get("discord").trim();if(discord&&!/^https:\/\/(discord\.gg|discord\.com)\//i.test(discord)){alert("Bitte einen gültigen https://discord.gg/... oder discord.com-Link verwenden.");return}servers.unshift({id:crypto.randomUUID(),name:fd.get("name").trim(),address:fd.get("address").trim(),discord,notes:fd.get("notes").trim()});persist();e.currentTarget.reset()};
+$("#settingsForm").onsubmit=e=>{e.preventDefault();const fd=new FormData(e.currentTarget);localStorage.setItem("rh_settings",JSON.stringify({welcome:fd.get("welcome"),discord:fd.get("discord")}));alert("Einstellungen lokal gespeichert.")};
+$("#loginForm").onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.currentTarget);if(!auth||!window.RH){$("#authStatus").textContent="Firebase noch nicht eingerichtet. Trage deine Firebase-Konfiguration in index.html ein.";return}try{const cred=await window.RH.signInWithEmailAndPassword(auth,fd.get("email"),fd.get("password"));cloudUser=cred.user;$("#authStatus").textContent="Angemeldet: "+cloudUser.email;$("#userLabel").textContent=cloudUser.email;$("#connection").textContent="● Firebase verbunden";}catch(err){$("#authStatus").textContent="Anmeldung fehlgeschlagen: "+err.message}};
+$("#logout").onclick=async()=>{if(auth&&window.RH)await window.RH.signOut(auth);cloudUser=null;owner=false;$("#authStatus").textContent="Abgemeldet";$("#userLabel").textContent="Nicht angemeldet";render()};
+if(auth&&window.RH){window.RH.onAuthStateChanged(auth,user=>{cloudUser=user;$("#userLabel").textContent=user?user.email:"Nicht angemeldet";/* Owner privilege must be granted with a Firebase custom claim; never trust a username in client code. */owner=false;render()})}
+const audio=$("#audio"), tracks=["musik/wavin-flag-coca-cola-celebration-mix.mp3","musik/euphoric-hardstyle.mp3","musik/magic-in-the-air.mp3"];let track=0;audio.volume=.22;
+function setTrack(i,autoplay=false){track=(i+tracks.length)%tracks.length;audio.src=tracks[track];$("#trackName").textContent=tracks[track].split("/").pop().replace(".mp3","").replaceAll("-"," ");$("#play").textContent="▶";$("#trackProgress").style.width="0%";if(autoplay)audio.play().then(()=>$("#play").textContent="Ⅱ").catch(()=>{});}
+$("#play").onclick=async()=>{if(audio.paused){if(!audio.src)setTrack(0);try{await audio.play();$("#play").textContent="Ⅱ"}catch{$("#trackName").textContent="Datei nicht gefunden – Musikordner prüfen"}}else{audio.pause();$("#play").textContent="▶"}};
+$("#prev").onclick=()=>setTrack(track-1,true);$("#next").onclick=()=>setTrack(track+1,true);$("#volume").oninput=e=>audio.volume=Number(e.target.value);audio.ontimeupdate=()=>{if(audio.duration)$("#trackProgress").style.width=(audio.currentTime/audio.duration*100)+"%"};audio.onended=()=>setTrack(track+1,true);audio.onerror=()=>{$("#trackName").textContent="Musikdatei fehlt – Musikordner prüfen"};
+render();
+</script>
+</body></html>
